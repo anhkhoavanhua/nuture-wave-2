@@ -1,0 +1,100 @@
+/* ✅ Đặt lại padding và margin cho container ngoài */
+.pd-session-container {
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: calc(100% - 240px); /* Giảm đi kích thước của sidebar */
+    box-sizing: border-box;
+    overflow-x: auto; /* Đảm bảo không bị tràn */
+    margin-left: 240px; /* Đặt kích thước tương ứng với sidebar */
+}
+
+/* ✅ Đặt bảng sát viền trái */
+.pd-session-table {
+    width: 100%; /* Đảm bảo bảng luôn co giãn đúng kích thước */
+    max-width: 100%; 
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-left: 0 !important; /* Xóa margin thừa */
+}
+
+/* ✅ Đảm bảo header bảng không bị tràn */
+.pd-session-table th {
+    background-color: #f4f6f9;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #e5e7eb;
+    border-left: none; /* Xóa viền trái */
+    font-size: 14px;
+    color: #555;
+}
+
+/* ✅ Căn chỉnh các ô bảng */
+.pd-session-table td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    border-left: none; /* Xóa viền trái */
+    font-size: 14px;
+    color: #333;
+}
+
+/* ✅ Hover trên hàng bảng */
+.pd-session-table tr:hover {
+    background-color: #f9fafb;
+}
+
+/* ✅ Nút trong bảng */
+.pd-session-table td button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 8px;
+    padding: 4px 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.pd-session-table td button:hover {
+    background-color: #f4f4f4;
+}
+
+.pd-session-table td button.edit {
+    color: #f59e0b;
+}
+
+.pd-session-table td button.delete {
+    color: #dc2626;
+}
+
+/* ✅ Đảm bảo không tràn container */
+.pd-session-container .pd-session-table {
+    margin-left: 0 !important;
+    display: table;
+}
+
+/* ✅ Đảm bảo table không bị thừa khoảng cách khi trong flex/grid */
+.pd-session-container {
+    display: block;
+}
+
+/* ✅ Xử lý responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+    .pd-session-container {
+        width: 100%;
+        margin-left: 0;
+        padding: 16px;
+    }
+
+    .pd-session-table th,
+    .pd-session-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .pd-session-table td button {
+        font-size: 12px;
+        padding: 2px 6px;
+    }
+}

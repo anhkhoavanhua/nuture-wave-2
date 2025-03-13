@@ -1,0 +1,325 @@
+/* ====== Sidebar ====== */
+.sidebar {
+    width: 240px;
+    background-color: #6a0dad;
+    color: white;
+    padding: 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    border-right: 1px solid #e5e7eb;
+    overflow-y: auto;
+}
+
+.sidebar h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 12px;
+}
+
+.sidebar nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    background-color: #570b9d;
+}
+
+/* ====== Dropdown ====== */
+.sidebar .dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.sidebar .dropdown-menu {
+    padding-left: 16px;
+}
+
+.sidebar .dropdown-menu li a {
+    font-size: 14px;
+}
+
+/* ====== Profile ====== */
+.profile {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    display: flex;
+    align-items: center;
+    background-color: #e5e7eb;
+    padding: 10px;
+    border-radius: 8px;
+    width: calc(100% - 32px);
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6a0dad;
+    font-weight: bold;
+}
+
+.profile-menu-trigger {
+    margin-left: auto;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* ====== Profile Dropdown Menu ====== */
+.profile-menu {
+    position: absolute;
+    left: 0;
+    bottom: 56px;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    border-radius: 8px;
+    z-index: 999;
+    width: 180px;
+    transition: opacity 0.2s ease;
+    opacity: 1;
+    display: block;
+}
+
+.profile-menu .menu-item {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    transition: background-color 0.2s ease;
+}
+
+.profile-menu .menu-item:hover {
+    background-color: #f4f4f4;
+}
+
+.profile-menu .menu-item.logout {
+    color: #dc2626;
+}
+
+/* ✅ Fix vị trí dropdown trên mobile */
+@media (max-width: 768px) {
+    .profile-menu {
+        left: auto;
+        right: 0;
+    }
+}
+
+/* ====== Main Content ====== */
+.main-content {
+    margin-left: 240px;
+    padding: 0; /* ❗ Xoá padding để căn sát mép bên trái */
+    background-color: #f4f6f9;
+    height: 100vh;
+    max-width: calc(100vw - 240px);
+    width: calc(100vw - 240px);
+    overflow-x: hidden;
+}
+
+/* ====== Header ====== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px; /* Giảm khoảng trống dưới header */
+}
+
+.header h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header .search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 250px;
+    outline: none;
+}
+
+.header button {
+    background-color: #6a0dad;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+.header button:hover {
+    background-color: #570b9d;
+}
+
+/* ====== Table ====== */
+.table-container {
+    background-color: white;
+    border-radius: 8px;
+    overflow-x: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+    /* ✅ Xoá margin và padding để khớp với main-content */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    background-color: #f4f6f9;
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.table td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+    color: #333;
+}
+
+.table tr:hover {
+    background-color: #f9fafb;
+}
+
+.table .status {
+    color: green;
+    font-weight: bold;
+}
+
+.table .actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.table .actions button.edit {
+    color: #f59e0b;
+}
+
+.table .actions button.delete {
+    color: #dc2626;
+}
+
+/* ====== Footer ====== */
+.footer {
+    margin-top: 8px; /* ❗ Giảm khoảng cách dưới footer */
+    color: #777;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ====== Pagination ====== */
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pagination select {
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.pagination button {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.pagination button:hover {
+    background-color: #f4f4f4;
+}
+
+.pagination button.active {
+    background-color: #6a0dad;
+    color: white;
+}
+
+/* ✅ Fix khoảng trống giữa các phần tử */
+.pagination .page-number {
+    padding: 4px 8px;
+    margin: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.pagination .page-number.active {
+    background-color: #6a0dad;
+    color: white;
+}
+
+/* ====== Responsive Fix ====== */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        padding: 16px;
+        width: 100vw;
+        max-width: 100vw;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static;
+        height: auto;
+        padding: 12px;
+    }
+
+    .header input {
+        width: 100%;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+}

@@ -1,0 +1,105 @@
+/* Tổng thể của login */
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f4f6f9 0%, #e9ecf3 100%);
+  }
+  
+  /* Card của login */
+  .login-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 380px;
+  }
+  
+  /* Logo */
+  .login-logo img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Tiêu đề */
+  .login-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Thông báo lỗi */
+  .error-message {
+    background-color: #ffe6e6;
+    color: #cc0000;
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  /* Thông báo thành công */
+  .success-message {
+    background-color: #e6fffa;
+    color: #2c7a7b;
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  /* Group của input */
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  
+  /* Input */
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  .input-group input:focus {
+    border-color: #6a0dad;
+  }
+  
+  /* Biểu tượng ẩn/hiện mật khẩu */
+  .password-toggle {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  /* Nút Login */
+  .login-btn {
+    width: 100%;
+    background-color: #6a0dad;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .login-btn:hover {
+    background-color: #570b9d;
+  }
+  
